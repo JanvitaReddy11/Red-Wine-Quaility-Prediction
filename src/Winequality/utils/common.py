@@ -1,13 +1,14 @@
 import os
+from box.exceptions import BoxValueError # type: ignore
+import yaml # type: ignore
+from Winequality import logger
 import json
-import joblib
+import joblib # type: ignore
+from ensure import ensure_annotations # type: ignore
+from box import ConfigBox # type: ignore
 from pathlib import Path
 from typing import Any
-import yaml
-from box import ConfigBox
-from box.exceptions import BoxValueError
-from ensure import ensure_annotations
-import logging
+
 @ensure_annotations
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
     """reads yaml file and returns"""
